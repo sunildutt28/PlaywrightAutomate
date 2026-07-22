@@ -4,4 +4,4 @@ BROWSER = "firefox"
 
 HEADLESS = False
 
-SLOW_MO = 1500
+SLOW_MO = 2500

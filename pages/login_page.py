@@ -9,8 +9,9 @@ class LoginPage:
 
     def open(self):
         from config import BASE_URL
+        print(f"Opening URL: {BASE_URL}")
         self.page.goto(BASE_URL)
-        
+
     def login(self, username, password):
         self.username.fill(username)
         self.password.fill(password)
