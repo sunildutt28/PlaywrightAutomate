@@ -12,4 +12,4 @@ def test_valid_login(page):
         "secret_sauce"
     )
 
-    assert "inventory" in page.url
+    assert "abc" in page.url
