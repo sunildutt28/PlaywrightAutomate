@@ -7,9 +7,11 @@ def page():
 
     with sync_playwright() as p:
 
+        from config import HEADLESS
+        from config import SLOW_MO
         browser = p.chromium.launch(
-            headless=False,
-            slow_mo=2500
+            headless=HEADLESS,
+            slow_mo=SLOW_MO
         )
 
         page = browser.new_page()

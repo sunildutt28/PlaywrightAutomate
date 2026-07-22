@@ -8,8 +8,9 @@ class LoginPage:
         self.login_button = page.locator("#login-button")
 
     def open(self):
-        self.page.goto("https://www.saucedemo.com/")
-
+        from config import BASE_URL
+        self.page.goto(BASE_URL)
+        
     def login(self, username, password):
         self.username.fill(username)
         self.password.fill(password)
