@@ -18,12 +18,11 @@ class LoginPage(BasePage):
         logger.info(f"Opening URL: {url}")
         self.page.goto(url)
 
-    def login(self):
-        logger.info(f"Logging in as {self.username}")
-        self.username.fill(self.username)
-        self.password.fill(self.password)
+    def login(self, username, password):
+        self.fill(self.username, username)
+        self.fill(self.password, password)
         self.click(self.login_button)
         
 
     def verify_error_message(self, expected_message):
-        expect(self.get_text(self.error_message)).to_have_text(expected_message)
+        expect(self.page.locator(self.error_message)).to_have_text(expected_message)

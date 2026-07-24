@@ -10,6 +10,9 @@ class InventoryPage(BasePage):
         self.cart_badge = ".shopping_cart_badge"
 
         self.backpack = "[data-test='add-to-cart-sauce-labs-backpack']"
+        self.shopping_cart = ".shopping_cart_link"
+
+        self.bike_light = "[data-test='add-to-cart-sauce-labs-bike-light']"
 
     def verify_inventory_loaded(self):
         self.wait_for(self.inventory_title)
@@ -23,3 +26,8 @@ class InventoryPage(BasePage):
             return self.get_text(self.cart_badge)
 
         return "0"
+    def add_bike_light_to_cart(self):
+        self.click(self.bike_light)
+
+    def open_cart(self):
+        self.click(self.shopping_cart)
