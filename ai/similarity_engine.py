@@ -42,3 +42,21 @@ class SimilarityEngine:
         ).item()
 
         return score
+
+    def find_best_match(self, original_profile, candidates):
+
+        best_candidate = None
+        best_score = -1
+
+        for candidate in candidates:
+
+            score = self.compare(original_profile, candidate)
+
+            print(f"{candidate.element_id} -> {score:.4f}")
+
+            if score > best_score:
+
+                best_score = score
+                best_candidate = candidate
+
+        return best_candidate, best_score
