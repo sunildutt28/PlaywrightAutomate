@@ -21,7 +21,7 @@ class DOMParser:
 
         return ElementProfile(
 
-            locator="",
+            locator=self.generate_locator(element),
 
             tag=element.name,
 
@@ -52,3 +52,19 @@ class DOMParser:
             buttons.append(self.create_profile(button))
 
         return buttons
+    
+    def generate_locator(self, element):
+
+        if element.get("id"):
+            return f"#{element.get('id')}"
+
+        elif element.get("aria-label"):
+            return f"[aria-label='{element.get('aria-label')}']"
+
+        elif element.get("placeholder"):
+            return f"[placeholder='{element.get('placeholder')}']"
+
+        elif element.name == "button" and element.get_text(strip=True):
+            return f"text={element.get_text(strip=True)}"
+
+        return ""
