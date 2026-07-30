@@ -2,12 +2,16 @@ from playwright.sync_api import expect
 
 from ai.recovery_engine import RecoveryEngine
 from ai.profile_store import ProfileStore
+from utils.logger import logger
+from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 
 
 class BasePage:
 
     def __init__(self, page):
+
         self.page = page
+
         self.profile_store = ProfileStore()
 
         self.recovery_engine = RecoveryEngine(page)
@@ -15,43 +19,61 @@ class BasePage:
     def click(self, locator):
         self.page.locator(locator).click()
 
-    def click_with_recovery(self, element_name, locator):
+    def click_with_recovery(
+            self,
+            page_name,
+            element_name,
+            locator):
 
         try:
+
             self.page.locator(locator).click()
 
+            print("Normal click succeeded.")
 
-        except Exception:
-            print("Normal click failed")
+        except  PlaywrightTimeoutError:
 
-            print("Loading profile...")
+            print("Locator failed.")
 
-            original_profile = self.profile_store.get(element_name)
-            
-            print("Starting recovery...")
-            if original_profile is None:
-                raise Exception(
-                    f"No stored profile for '{element_name}'"
-                )
+            #self.profile_store.load_page(page_name)
 
-            recovered_profile, score = self.recovery_engine.recover(
-                original_profile
+            profile = self.profile_store.get(element_name)
+
+            recovered_profile, score = self.recovery_engine.recover(profile)
+
+            print(
+                f"Recovered using "
+                f"{recovered_profile.locator}"
             )
 
-            print(f"Recovered locator: {recovered_profile.locator}")
-
-            print(f"Similarity: {score:.3f}")
-
-            if recovered_profile is None:
-                raise Exception(
-                    f"Recovery failed for '{element_name}'"
-                )
-            print("Retrying click...")
-            self.page.locator(recovered_profile.locator).click()
-
+            self.page.locator(
+                recovered_profile.locator
+            ).click()
                     
     def fill(self, locator, value):
         self.page.locator(locator).fill(value)
+
+    def fill_with_recovery(self, page_name, element_name, locator, value):
+        print(">>> fill_with_recovery CALLED <<<")
+
+        try:
+            self.page.locator(locator).fill(value)
+            print("Normal fill succeeded.")
+
+        except PlaywrightTimeoutError as e:
+            print(f"Locator failed: {e}")
+
+            self.profile_store.load_page(page_name)
+
+            profile = self.profile_store.get(element_name)
+
+            recovered_profile, score = self.recovery_engine.recover(profile)
+
+            print(f"Recovered using {recovered_profile.locator}")
+
+            self.page.locator(
+                recovered_profile.locator
+            ).fill(value)
 
     def get_text(self, locator):
         return self.page.locator(locator).text_content().strip()

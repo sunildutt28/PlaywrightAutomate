@@ -8,7 +8,7 @@ class LoginPage(BasePage):
     def __init__(self, page):
         super().__init__(page)
 
-        self.username = "[data-test='username']"
+        self.username = "[data-test='usernames']"
         self.password = "[data-test='password']"
         self.login_button = "[data-test='login-button']"
         self.error_message = "[data-test='error']"
@@ -19,10 +19,20 @@ class LoginPage(BasePage):
         self.page.goto(url)
 
     def login(self, username, password):
-        self.fill(self.username, username)
-        self.fill(self.password, password)
-        self.click(self.login_button)
-        
+        #self.fill(self.username, username)
+        self.fill_with_recovery(
+            "login_page",
+            "username",
+            self.username,
+            username
+        )
+        self.fill_with_recovery(
+            "login_page",
+            "password",
+            self.password,
+            password
+            )
+        self.click_with_recovery("login_page", "login_button", self.login_button)
 
     def verify_error_message(self, expected_message):
         expect(self.page.locator(self.error_message)).to_have_text(expected_message)

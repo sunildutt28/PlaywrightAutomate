@@ -4,8 +4,15 @@ from sentence_transformers.util import cos_sim
 
 class SimilarityEngine:
 
+    model = None
+
     def __init__(self):
-        self.model = SentenceTransformer("all-MiniLM-L6-v2")
+
+        if SimilarityEngine.model is None:
+            print("Loading AI model...")
+            SimilarityEngine.model = SentenceTransformer("all-MiniLM-L6-v2")
+
+        self.model = SimilarityEngine.model
 
     def profile_to_text(self, profile):
 
