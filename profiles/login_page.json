@@ -1,0 +1,40 @@
+{
+  "username": {
+    "locator": "#user-name",
+    "tag": "input",
+    "text": "",
+    "role": "",
+    "element_id": "user-name",
+    "element_type": "text",
+    "aria_label": "",
+    "placeholder": "Username",
+    "css_class": "form_input",
+    "parent_tag": "div"
+  },
+
+  "password": {
+    "locator": "#password",
+    "tag": "input",
+    "text": "",
+    "role": "",
+    "element_id": "password",
+    "element_type": "password",
+    "aria_label": "",
+    "placeholder": "Password",
+    "css_class": "form_input",
+    "parent_tag": "div"
+  },
+
+  "login_button": {
+    "locator": "#login-button",
+    "tag": "input",
+    "text": "Login",
+    "role": "",
+    "element_id": "login-button",
+    "element_type": "submit",
+    "aria_label": "",
+    "placeholder": "",
+    "css_class": "submit-button",
+    "parent_tag": "form"
+  }
+}
