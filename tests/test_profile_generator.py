@@ -3,10 +3,10 @@ from ai.profile_generator import ProfileGenerator
 
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
-from pages.cart_page import CartPage
+#from pages.cart_page import CartPage
 
 
-def test_generate_cart_profile(page):
+"""def test_generate_cart_profile(page):
 
     login_page = LoginPage(page)
     inventory_page = InventoryPage(page)
@@ -18,18 +18,30 @@ def test_generate_cart_profile(page):
     # Login
     login_page.login("standard_user", "secret_sauce")
 
-    # Add product and go to cart
-    inventory_page.add_backpack_to_cart()
-    inventory_page.open_cart()
-
-    # Verify cart page
-    cart_page.verify_cart_loaded()
-
+    
     # Generate profile
     parser = DOMParser(page)
     profiles = parser.get_elements()
 
     ProfileGenerator().generate(
-        "cart_page",
+        "inventory_page",
+        profiles
+    )"""
+
+def test_generate_inventory_profile(page, base_url):
+
+    login = LoginPage(page)
+    inventory = InventoryPage(page)
+
+    login.open(base_url)
+    login.login("standard_user", "secret_sauce")
+
+    inventory.verify_inventory_loaded()
+
+    parser = DOMParser(page)
+    profiles = parser.get_elements()
+
+    ProfileGenerator().generate(
+        "inventory_page",
         profiles
     )

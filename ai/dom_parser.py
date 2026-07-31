@@ -3,6 +3,9 @@ from ai.element_profile import ElementProfile
 
 from bs4 import BeautifulSoup
 
+
+"""Class to parse the DOM and generate element profiles."""
+
 class DOMParser:
 
     def __init__(self, page):

@@ -2,6 +2,8 @@ import json
 import os
 
 
+"""ProfileGenerator class is responsible for generating JSON profiles for web pages. """
+
 class ProfileGenerator:
 
     def generate(self, page_name, profiles):

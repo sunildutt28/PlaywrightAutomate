@@ -1,5 +1,9 @@
 from .dom_parser import DOMParser
 
+"""CandidateExtractor class is responsible for extracting candidate web elements from the DOM. 
+It uses the DOMParser to parse the page content and create profiles for various HTML elements 
+such as input boxes, buttons, links, selects, and textareas. 
+The extracted candidates can be used for further processing or analysis. """
 
 class CandidateExtractor:
 

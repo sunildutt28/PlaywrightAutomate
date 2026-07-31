@@ -1,6 +1,7 @@
 from ai.candidate_extractor import CandidateExtractor
 from ai.similarity_engine import SimilarityEngine
 
+"""RecoveryEngine class is responsible for recovering web elements using AI-based similarity matching. """
 
 class RecoveryEngine:
 

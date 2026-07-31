@@ -2,6 +2,7 @@ from ai.element_profile import ElementProfile
 import json
 import os
 
+"""ProfileStore class is responsible for loading and storing element profiles for different web pages. """
 
 class ProfileStore:
 

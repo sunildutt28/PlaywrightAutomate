@@ -5,6 +5,7 @@ from ai.profile_store import ProfileStore
 from utils.logger import logger
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 
+"""Base class for all page objects."""
 
 class BasePage:
 
@@ -68,7 +69,7 @@ class BasePage:
         except PlaywrightTimeoutError as e:
             print(f"Locator failed: {e}")
 
-            self.profile_store.load_page(page_name)
+            #self.profile_store.load_page(page_name)
 
             profile = self.profile_store.get(element_name)
 

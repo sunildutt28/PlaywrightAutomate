@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+"""Data class representing the profile of a web element. """
 
 @dataclass
 class ElementProfile:

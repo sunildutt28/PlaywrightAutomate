@@ -1,6 +1,10 @@
 from sentence_transformers import SentenceTransformer
 from sentence_transformers.util import cos_sim
 
+"""SimilarityEngine class is responsible for computing embeddings 
+and comparing the similarity between web element profiles. 
+It uses a pre-trained SentenceTransformer model to generate embeddings for the profiles 
+and calculates cosine similarity between them. """
 
 class SimilarityEngine:
 
