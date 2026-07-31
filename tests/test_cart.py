@@ -25,3 +25,5 @@ def test_add_backpack_to_cart(page, base_url):
     cart.verify_cart_loaded()
 
     cart.verify_product_present("Sauce Labs Backpack")
+
+    cart.click_checkout()

@@ -1,0 +1,122 @@
+{
+  "react-burger-menu-btn": {
+    "locator": "#react-burger-menu-btn",
+    "tag": "button",
+    "text": "Open Menu",
+    "role": "",
+    "element_id": "react-burger-menu-btn",
+    "element_type": "button",
+    "aria_label": "",
+    "placeholder": "",
+    "css_class": "",
+    "parent_tag": "div"
+  },
+  "react-burger-cross-btn": {
+    "locator": "#react-burger-cross-btn",
+    "tag": "button",
+    "text": "Close Menu",
+    "role": "",
+    "element_id": "react-burger-cross-btn",
+    "element_type": "button",
+    "aria_label": "",
+    "placeholder": "",
+    "css_class": "",
+    "parent_tag": "div"
+  },
+  "remove-sauce-labs-backpack": {
+    "locator": "#remove-sauce-labs-backpack",
+    "tag": "button",
+    "text": "Remove",
+    "role": "",
+    "element_id": "remove-sauce-labs-backpack",
+    "element_type": "",
+    "aria_label": "",
+    "placeholder": "",
+    "css_class": "btn btn_secondary btn_small cart_button",
+    "parent_tag": "div"
+  },
+  "continue-shopping": {
+    "locator": "#continue-shopping",
+    "tag": "button",
+    "text": "Continue Shopping",
+    "role": "",
+    "element_id": "continue-shopping",
+    "element_type": "",
+    "aria_label": "",
+    "placeholder": "",
+    "css_class": "btn btn_secondary back btn_medium",
+    "parent_tag": "div"
+  },
+  "checkout_button": {
+    "locator": "#checkout",
+    "tag": "button",
+    "text": "Checkout",
+    "role": "",
+    "element_id": "checkout",
+    "element_type": "",
+    "aria_label": "",
+    "placeholder": "",
+    "css_class": "btn btn_action btn_medium checkout_button",
+    "parent_tag": "div"
+  },
+  "inventory_sidebar_link": {
+    "locator": "#inventory_sidebar_link",
+    "tag": "a",
+    "text": "All Items",
+    "role": "",
+    "element_id": "inventory_sidebar_link",
+    "element_type": "",
+    "aria_label": "",
+    "placeholder": "",
+    "css_class": "bm-item menu-item",
+    "parent_tag": "nav"
+  },
+  "about_sidebar_link": {
+    "locator": "#about_sidebar_link",
+    "tag": "a",
+    "text": "About",
+    "role": "",
+    "element_id": "about_sidebar_link",
+    "element_type": "",
+    "aria_label": "",
+    "placeholder": "",
+    "css_class": "bm-item menu-item",
+    "parent_tag": "nav"
+  },
+  "logout_sidebar_link": {
+    "locator": "#logout_sidebar_link",
+    "tag": "a",
+    "text": "Logout",
+    "role": "",
+    "element_id": "logout_sidebar_link",
+    "element_type": "",
+    "aria_label": "",
+    "placeholder": "",
+    "css_class": "bm-item menu-item",
+    "parent_tag": "nav"
+  },
+  "reset_sidebar_link": {
+    "locator": "#reset_sidebar_link",
+    "tag": "a",
+    "text": "Reset App State",
+    "role": "",
+    "element_id": "reset_sidebar_link",
+    "element_type": "",
+    "aria_label": "",
+    "placeholder": "",
+    "css_class": "bm-item menu-item",
+    "parent_tag": "nav"
+  },
+  "item_4_title_link": {
+    "locator": "#item_4_title_link",
+    "tag": "a",
+    "text": "Sauce Labs Backpack",
+    "role": "",
+    "element_id": "item_4_title_link",
+    "element_type": "",
+    "aria_label": "",
+    "placeholder": "",
+    "css_class": "",
+    "parent_tag": "div"
+  }
+}
