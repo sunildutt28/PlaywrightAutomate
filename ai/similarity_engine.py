@@ -26,43 +26,39 @@ class SimilarityEngine:
             f"Parent: {profile.parent_tag}. "
             f"Text: {profile.text}."
         )
+    def get_embedding(self, profile):
 
-    def compare(self, profile1, profile2):
+        text = self.profile_to_text(profile)
 
-        text1 = self.profile_to_text(profile1)
-
-        text2 = self.profile_to_text(profile2)
-
-        embedding1 = self.model.encode(
-            text1,
+        return self.model.encode(
+            text,
             convert_to_tensor=True
         )
+    
+    def compare(self, embedding1, embedding2):
 
-        embedding2 = self.model.encode(
-            text2,
-            convert_to_tensor=True
-        )
+        return cos_sim(embedding1, embedding2).item()
 
-        score = cos_sim(
-            embedding1,
-            embedding2
-        ).item()
-
-        return score
-
+        
     def find_best_match(self, original_profile, candidates):
 
-        best_candidate = None
         best_score = -1
+        best_candidate = None
+
+        original_embedding = self.get_embedding(original_profile)
 
         for candidate in candidates:
 
-            score = self.compare(original_profile, candidate)
+            candidate_embedding = self.get_embedding(candidate)
+
+            score = self.compare(
+                original_embedding,
+                candidate_embedding
+            )
 
             print(f"{candidate.element_id} -> {score:.4f}")
-
+            
             if score > best_score:
-
                 best_score = score
                 best_candidate = candidate
 

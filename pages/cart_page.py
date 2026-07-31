@@ -8,7 +8,7 @@ class CartPage(BasePage):
 
         self.cart_title = ".title"
         self.cart_item_name = ".inventory_item_name"
-        self.checkout_button = "[data-test='checkout']"
+        self.checkout_button = "[data-test='acheckout']"
         self.continue_shopping_button = "[data-test='continue-shopping']"
         self.remove_backpack_button = "[data-test='remove-sauce-labs-backpack']"
 
@@ -19,10 +19,12 @@ class CartPage(BasePage):
         assert self.get_text(self.cart_item_name) == product_name
 
     def click_checkout(self):
-        self.click(self.checkout_button)
+        self.click_with_recovery(
+            "cart_page",
+            "checkout_button",
+            self.checkout_button
+        )
 
-    def continue_shopping(self):
-        self.click(self.continue_shopping_button)
-
+   
     def remove_backpack(self):
         self.click(self.remove_backpack_button)

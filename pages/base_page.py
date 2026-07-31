@@ -24,7 +24,10 @@ class BasePage:
             page_name,
             element_name,
             locator):
-
+        """Attempts to click an element using the original locator.
+        If the locator fails, uses AI-based recovery to find the
+        most similar element on the current page.
+        """
         try:
 
             self.page.locator(locator).click()
@@ -35,15 +38,17 @@ class BasePage:
 
             print("Locator failed.")
 
-            #self.profile_store.load_page(page_name)
+            self.profile_store.load_page(page_name)
 
             profile = self.profile_store.get(element_name)
+
+            print(f"Looking for: {element_name}")
 
             recovered_profile, score = self.recovery_engine.recover(profile)
 
             print(
                 f"Recovered using "
-                f"{recovered_profile.locator}"
+                f"{recovered_profile.locator} with score {score}" 
             )
 
             self.page.locator(
@@ -69,7 +74,7 @@ class BasePage:
 
             recovered_profile, score = self.recovery_engine.recover(profile)
 
-            print(f"Recovered using {recovered_profile.locator}")
+            print(f"Recovered using {recovered_profile.locator} with score {score}")
 
             self.page.locator(
                 recovered_profile.locator

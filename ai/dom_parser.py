@@ -68,3 +68,28 @@ class DOMParser:
             return f"text={element.get_text(strip=True)}"
 
         return ""
+
+    def get_elements(self):
+
+        soup = self.get_dom()
+
+        elements = []
+
+        tags = [
+            "input",
+            "button",
+            "select",
+            "textarea",
+            "a"
+        ]
+
+        for tag in tags:
+
+            for element in soup.find_all(tag):
+
+                profile = self.create_profile(element)
+
+                if profile.locator:
+                    elements.append(profile)
+
+        return elements
