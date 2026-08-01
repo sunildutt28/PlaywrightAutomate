@@ -2,7 +2,7 @@ from pages.base_page import BasePage
 from ai.element_profile import ElementProfile
 import pytest
 
-@pytest.mark.smoke
+
 def test_click_recovery(page, base_url):
 
     page.goto(base_url)
