@@ -8,8 +8,8 @@ class LoginPage(BasePage):
     def __init__(self, page):
         super().__init__(page)
 
-        self.username = "[data-test='usernames']"
-        self.password = "[data-test='password']"
+        self.username = "[data-test='username']"
+        self.password = "[data-test='passwords']"
         self.login_button = "[data-test='login-button']"
         self.error_message = "[data-test='error']"
 
