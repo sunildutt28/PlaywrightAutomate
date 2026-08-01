@@ -6,8 +6,8 @@ URLS = {
     "prod": "https://www.saucedemo.com/"
 }
 
-BROWSER = "firefox"
+BROWSER = "chromium"
 
 HEADLESS = True
 
-SLOW_MO = 2500
+SLOW_MO = 0
