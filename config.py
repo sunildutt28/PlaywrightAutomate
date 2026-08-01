@@ -8,6 +8,6 @@ URLS = {
 
 BROWSER = "firefox"
 
-HEADLESS = False
+HEADLESS = True
 
 SLOW_MO = 2500
