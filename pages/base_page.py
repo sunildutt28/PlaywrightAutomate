@@ -69,7 +69,7 @@ class BasePage:
         except PlaywrightTimeoutError as e:
             print(f"Locator failed: {e}")
 
-            #self.profile_store.load_page(page_name)
+            self.profile_store.load_page(page_name)
 
             profile = self.profile_store.get(element_name)
 
