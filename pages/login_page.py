@@ -9,7 +9,7 @@ class LoginPage(BasePage):
         super().__init__(page)
 
         self.username = "[data-test='username']"
-        self.password = "[data-test='passwords']"
+        self.password = "[data-test='passwords1']"
         self.login_button = "[data-test='login-button']"
         self.error_message = "[data-test='error']"
 
