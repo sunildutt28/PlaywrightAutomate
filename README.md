@@ -239,7 +239,7 @@ Retry action
 
 ---
 
-# 🧠 Similarity Engine
+#  Similarity Engine
 
 The framework uses:
 
@@ -255,7 +255,7 @@ all-MiniLM-L6-v2
 
 The model is loaded only once using a class-level instance:
 
-```python
+    
 class SimilarityEngine:
 
     model = None
@@ -281,7 +281,7 @@ Each important UI element has a stored profile.
 
 Example:
 
-```json
+   
 {
   "checkout_button": {
     "locator": "#checkout",
@@ -350,17 +350,17 @@ A profile-generation test can navigate to the required page, parse the DOM and g
 
 ---
 
-# 🔄 Recovery Example
+#  Recovery Example
 
 Suppose the original locator is:
 
-```python
+    
 self.checkout_button = "#checkout"
 ```
 
 and the application changes it to:
 
-```html
+    
 <button id="checkout-button">
     Checkout
 </button>
@@ -430,7 +430,7 @@ pytest tests/test_cart.py::test_add_backpack_to_cart
 
 ---
 
-# 🌐 Multi-Browser Execution
+#  Multi-Browser Execution
 
 The framework supports:
 
@@ -462,7 +462,7 @@ This means the same test code can execute on different machines and different br
 
 ---
 
-# ⚙️ Environment Configuration
+#  Environment Configuration
 
 The framework supports environment selection.
 
@@ -478,7 +478,7 @@ This allows the same automation code to be used against different application en
 
 ---
 
-# 📸 Failure Screenshots
+#  Failure Screenshots
 
 When a test fails, the Pytest hook captures a screenshot.
 
@@ -499,7 +499,7 @@ This helps investigate UI failures in CI environments.
 
 ---
 
-# 📊 Test Reports
+#  Test Reports
 
 The framework generates an HTML report.
 
@@ -519,7 +519,7 @@ The report can be opened after test execution to inspect:
 
 ---
 
-# 📝 Logging
+#  Logging
 
 Centralized logging is provided through:
 
@@ -531,7 +531,7 @@ This avoids relying exclusively on `print()` statements and provides a consisten
 
 ---
 
-# 📦 Installation
+#  Installation
 
 ## Prerequisites
 
@@ -590,7 +590,7 @@ python -m playwright install
 
 ---
 
-# 🚀 Running the Framework
+#  Running the Framework
 
 Example:
 
@@ -685,7 +685,7 @@ https://<ngrok-domain>/github-webhook/
 
 ---
 
-# 🔐 Repository Security
+#  Repository Security
 
 The repository can be maintained as either public or private.
 
@@ -695,7 +695,7 @@ For a public repository, cloning does not require authentication, but write acce
 
 ---
 
-# 🖥️ Running on Another Machine
+#  Running on Another Machine
 
 The framework is designed to be portable.
 
@@ -725,11 +725,11 @@ The same project can therefore run on another machine with a different supported
 
 ---
 
-# 🧪 Example Test
+#  Example Test
 
 Example cart test:
 
-```python
+    
 @pytest.mark.smoke
 def test_add_backpack_to_cart(page, base_url):
 
@@ -758,7 +758,7 @@ The test follows the Page Object Model and keeps application-specific implementa
 
 ---
 
-# 🎯 Design Goals
+#  Design Goals
 
 The framework is designed to demonstrate how AI can complement traditional test automation.
 
@@ -796,7 +796,7 @@ The objective is not to eliminate deterministic automation, but to introduce a r
 
 ---
 
-# ⚠️ Current Limitations
+#  Current Limitations
 
 The current implementation has several limitations:
 
@@ -812,7 +812,7 @@ For production use, recovery decisions should be logged and preferably reported 
 
 ---
 
-# 🔮 Future Enhancements
+#  Future Enhancements
 
 Potential future improvements include:
 
@@ -907,7 +907,7 @@ Configure Jenkins to execute smoke tests automatically for Pull Requests before 
 
 ---
 
-# 🧭 Recommended CI/CD Evolution
+#  Recommended CI/CD Evolution
 
 The project can evolve from the current setup:
 
@@ -947,7 +947,7 @@ towards:
 
 ---
 
-# 🏆 Project Highlights
+#  Project Highlights
 
 This project demonstrates experience with:
 
@@ -973,9 +973,9 @@ This project demonstrates experience with:
 
 ---
 
-# 📌 Project Status
+#  Project Status
 
-**Current version:** `v1.0`
+**Current version:** `v2.0`
 
 The current version demonstrates a working AI-assisted Playwright automation framework with locator recovery and Jenkins-based CI execution.
 
