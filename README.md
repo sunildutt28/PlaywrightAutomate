@@ -209,7 +209,7 @@ Playwright
 
 If the locator still exists:
 
-```text
+  
 Click succeeds
 ```
 
@@ -243,13 +243,13 @@ Retry action
 
 The framework uses:
 
-```text
+  
 SentenceTransformer
 ```
 
 with:
 
-```text
+  
 all-MiniLM-L6-v2
 ```
 
@@ -323,7 +323,7 @@ The framework contains a DOM parser and profile generator.
 
 Conceptually:
 
-```text
+  
 Application Page
       ↓
 DOMParser
@@ -339,7 +339,7 @@ page_name.json
 
 For example:
 
-```text
+  
 profiles/
 ├── login_page.json
 ├── inventory_page.json
@@ -368,7 +368,7 @@ and the application changes it to:
 
 The original locator:
 
-```text
+  
 #checkout
 ```
 
@@ -386,7 +386,7 @@ Instead of immediately failing the test, the framework:
 
 Example output:
 
-```text
+  
 item_4_title_link -> 0.6658
  -> 0.5778
  -> 0.6079
@@ -406,25 +406,25 @@ The framework uses Pytest.
 
 Run all tests:
 
-```bash
+    
 pytest
 ```
 
 Run smoke tests:
 
-```bash
+    
 pytest -m smoke
 ```
 
 Run a specific test:
 
-```bash
+    
 pytest tests/test_cart.py
 ```
 
 Run a specific test function:
 
-```bash
+    
 pytest tests/test_cart.py::test_add_backpack_to_cart
 ```
 
@@ -442,19 +442,19 @@ Browser selection is available through the command line.
 
 ### Chromium
 
-```bash
+    
 pytest -m smoke --browser=chromium
 ```
 
 ### Firefox
 
-```bash
+    
 pytest -m smoke --browser=firefox
 ```
 
 ### WebKit
 
-```bash
+    
 pytest -m smoke --browser=webkit
 ```
 
@@ -468,7 +468,7 @@ The framework supports environment selection.
 
 Example:
 
-```bash
+    
 pytest -m smoke --env=qa
 ```
 
@@ -484,13 +484,13 @@ When a test fails, the Pytest hook captures a screenshot.
 
 Screenshots are stored under:
 
-```text
+  
 screenshots/
 ```
 
 Example:
 
-```text
+  
 screenshots/
 └── test_add_backpack_to_cart_20260819_120530.png
 ```
@@ -505,7 +505,7 @@ The framework generates an HTML report.
 
 Example:
 
-```text
+  
 reports/report.html
 ```
 
@@ -523,7 +523,7 @@ The report can be opened after test execution to inspect:
 
 Centralized logging is provided through:
 
-```text
+  
 utils/logger.py
 ```
 
@@ -546,13 +546,13 @@ Playwright manages its own browser binaries, so the required Playwright browsers
 
 ## Clone the repository
 
-```bash
+    
 git clone https://github.com/sunildutt28/PlaywrightAutomate.git
 ```
 
 Move into the project:
 
-```bash
+    
 cd PlaywrightAutomate
 ```
 
@@ -562,7 +562,7 @@ cd PlaywrightAutomate
 
 Windows:
 
-```bash
+    
 python -m venv venv
 ```
 
@@ -576,7 +576,7 @@ Activate:
 
 ## Install Python dependencies
 
-```bash
+    
 pip install -r requirements.txt
 ```
 
@@ -584,7 +584,7 @@ pip install -r requirements.txt
 
 ## Install Playwright browsers
 
-```bash
+    
 python -m playwright install
 ```
 
@@ -594,31 +594,31 @@ python -m playwright install
 
 Example:
 
-```bash
+    
 pytest -m smoke --browser=chromium
 ```
 
 For Firefox:
 
-```bash
+    
 pytest -m smoke --browser=firefox
 ```
 
 For WebKit:
 
-```bash
+    
 pytest -m smoke --browser=webkit
 ```
 
 ---
 
-# 🔧 CI/CD with Jenkins
+#  CI/CD with Jenkins
 
 The project is integrated with Jenkins for Continuous Integration.
 
 The current CI workflow is:
 
-```text
+  
 Developer
    │
    │ git push
@@ -649,13 +649,13 @@ The Jenkins job executes the smoke suite after a new change is pushed to GitHub.
 
 ---
 
-# 🔗 GitHub Webhook
+#  GitHub Webhook
 
 For local Jenkins development, the Jenkins server can be exposed through an ngrok tunnel.
 
 Example:
 
-```text
+  
 GitHub
    │
    │ HTTPS webhook
@@ -671,7 +671,7 @@ Jenkins
 
 The GitHub webhook endpoint is:
 
-```text
+  
 /github-webhook/
 ```
 
@@ -679,7 +679,7 @@ The trailing endpoint is important.
 
 Example:
 
-```text
+  
 https://<ngrok-domain>/github-webhook/
 ```
 
@@ -701,7 +701,7 @@ The framework is designed to be portable.
 
 On another machine:
 
-```bash
+    
 git clone <repository>
 cd PlaywrightAutomate
 
@@ -710,14 +710,14 @@ python -m venv venv
 
 Activate the environment and install dependencies:
 
-```bash
+    
 pip install -r requirements.txt
 python -m playwright install
 ```
 
 Then execute:
 
-```bash
+    
 pytest -m smoke --browser=firefox
 ```
 
@@ -764,7 +764,7 @@ The framework is designed to demonstrate how AI can complement traditional test 
 
 Traditional automation:
 
-```text
+  
 Locator changes
       ↓
 Test fails
@@ -776,7 +776,7 @@ Test passes
 
 AI-assisted automation:
 
-```text
+  
 Locator changes
       ↓
 Original locator fails
@@ -820,7 +820,7 @@ Potential future improvements include:
 
 Instead of recovering every candidate:
 
-```text
+  
 score = 0.91
 → Recover
 
@@ -834,7 +834,7 @@ This prevents unsafe low-confidence healing.
 
 Record:
 
-```text
+  
 Original locator
 Recovered locator
 Similarity score
@@ -847,13 +847,13 @@ Timestamp
 
 Move Jenkins configuration into:
 
-```text
+  
 Jenkinsfile
 ```
 
 with stages such as:
 
-```text
+  
 Checkout
    ↓
 Install Dependencies
@@ -871,7 +871,7 @@ Archive Screenshots
 
 Run:
 
-```text
+  
 Chromium
 Firefox
 WebKit
@@ -887,7 +887,7 @@ Execute independent tests in parallel to reduce CI execution time.
 
 Filter candidates before semantic comparison using deterministic characteristics such as:
 
-```text
+  
 Tag
 Element type
 Role
@@ -911,7 +911,7 @@ Configure Jenkins to execute smoke tests automatically for Pull Requests before 
 
 The project can evolve from the current setup:
 
-```text
+  
 GitHub
    ↓
 Webhook
@@ -923,7 +923,7 @@ Smoke Tests
 
 towards:
 
-```text
+  
                     GitHub
                        │
              Pull Request / Push
