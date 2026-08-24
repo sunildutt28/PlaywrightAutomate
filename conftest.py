@@ -46,6 +46,7 @@ def pytest_addoption(parser):
         default="qa",
         help="Environment for the application"
     )
+    
 
 @pytest.fixture
 def page(request):
@@ -92,7 +93,7 @@ def page(request):
 
         browser.close()
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def base_url(request):
     selected_env = request.config.getoption("--env")
     return URLS[selected_env]

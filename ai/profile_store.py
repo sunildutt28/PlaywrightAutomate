@@ -1,3 +1,5 @@
+import profile
+
 from ai.element_profile import ElementProfile
 import json
 import os
@@ -35,3 +37,6 @@ class ProfileStore:
 
     def get(self, element_name):
         return self.profiles.get(element_name)
+
+    def save(self, element_name, profile):
+        self.profiles[element_name] = profile   
