@@ -8,6 +8,6 @@ URLS = {
 
 BROWSER = "chromium"
 
-HEADLESS = True
+HEADLESS = False
 
 SLOW_MO = 0
