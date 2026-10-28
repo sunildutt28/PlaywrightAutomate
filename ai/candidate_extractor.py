@@ -14,7 +14,6 @@ class CandidateExtractor:
     def get_all_candidates(self):
 
         candidates = []
-
         soup = self.parser.get_dom()
 
         for input_box in soup.find_all("input"):
